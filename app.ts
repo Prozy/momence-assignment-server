@@ -46,7 +46,7 @@ const parseData = (data: string) => {
   return responseObject;
 };
 
-app.get("/cnb-data", async (req: Request, res: Response) => {
+app.get("/api/v1/exchange-rate", async (req: Request, res: Response) => {
   try {
     const response = await fetch(
       "https://www.cnb.cz/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt"
@@ -62,3 +62,5 @@ app.get("/cnb-data", async (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Proxy server listening at http://localhost:${port}`);
 });
+
+export default app;
